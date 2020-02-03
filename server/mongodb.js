@@ -1,4 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
+const ObjectID = require('mongodb').ObjectID;
 const MONGODB_URL = "mongodb://ybj:9559@116.62.44.86:27017/stmgt";
 
 // 数据库连接
@@ -20,5 +21,5 @@ function error(db, err) {
 
 
 
-module.exports = { connect, error };
+module.exports = { connect, error, ObjectID };
 

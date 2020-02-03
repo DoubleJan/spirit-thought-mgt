@@ -8,7 +8,7 @@ const server = http.createServer((req, res) => {
   // 跨域
   res.setHeader("Access-Control-Allow-Origin", '*');
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  res.setHeader("Access-Control-Allow-Methods","PUT, POST, GET, DELETE, OPTIONS, PATCH");
+  // res.setHeader("Access-Control-Allow-Methods","PUT, POST, GET, DELETE, OPTIONS, PATCH");
 
   // utf8解决中文乱码问题
   res.setHeader('Content-type', 'application/json; charset=utf8');
