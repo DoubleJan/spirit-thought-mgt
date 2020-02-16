@@ -9,9 +9,10 @@ const routes = {
 
 // 获得对应的路由
 function regexRouter(req) {
-  const router = Object.keys(routes).find((v) => req.url.includes(v));
+  const router = Object.keys(routes).find((v) => req.url.includes(`/api${v}`));
   if (routes[router] && routes[router].method === req.method.toUpperCase()) {
-    console.log('GET ROUTER: ', router);
+    // 打印出基本请求信息
+    console.log(`${req.headers.host} ${req.url} ${req.method}`);
     return routes[router].handler;
   } else {
     return null;
@@ -21,9 +22,6 @@ function regexRouter(req) {
 // 路由入口
 module.exports = (req, res) => {
   const router = regexRouter(req)
-
-  // 打印出基本请求信息
-  console.log(`${req.headers.host} ${req.url} ${req.method}`);
 
   if (typeof router === 'function') {
     router(req, res);

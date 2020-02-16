@@ -19,7 +19,6 @@ module.exports = (req, res) => {
       }
 
       result = template.simpleGet({ data });
-
       res.write(JSON.stringify(result));
       res.end(); 
     })
