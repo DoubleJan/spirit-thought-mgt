@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
 
   // 跨域
   res.setHeader("Access-Control-Allow-Origin", '*');
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type,Cache-Control");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type,Cache-Control,X-Real-IP,Host");
   res.setHeader("Access-Control-Allow-Methods","PUT, POST, GET, DELETE, OPTIONS, PATCH");
 
   // utf8解决中文乱码问题
