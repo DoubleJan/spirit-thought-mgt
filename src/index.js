@@ -2,6 +2,7 @@
 
 const http = require('http');
 const router = require('./routes');
+const { notificationServer, sendRegisterLicenceMail, sendUserLicenceMail } = require('./utils/mailer');
 
 const server = http.createServer((req, res) => {
 
@@ -25,6 +26,11 @@ const server = http.createServer((req, res) => {
 
 });
 
+// notificationServer();
 
-server.listen(9000, () => console.log('Server start 9000'));
+// sendRegisterLicenceMail({ username: 'DoubleJan', email: 'doublejan@126.com' });
+
+// sendUserLicenceMail({ username: '月饼见', email: '954464727@qq.com', licence: 'LICENCELICEN' });
+
+server.listen(8000, () => console.log(`${process.env.NODE_ENV} Server start 8000`));
 

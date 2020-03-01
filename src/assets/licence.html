@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <title>Spirit Thought 注册许可</title>
+</head>
+<style>
+  body,
+  html {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .text-body {
+    padding: 2rem 1rem;
+    margin-top: 1rem;
+    letter-spacing: 0.06rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+    border-bottom: 1px solid #cf56a1;
+    color: #cf56a1;
+    padding: 1rem;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    color: #000;
+  }
+
+  p {
+    line-height: 2rem;
+    color: #666;
+    font-size: 1.2rem;
+    font-weight: 200;
+    text-align: justify;
+  }
+
+  .remark {
+    float: right;
+  }
+
+  .remark p {
+    text-align: right;
+    line-height: 1.4rem;
+    margin: 0.8rem 0;
+    color: #000;
+  }
+
+  .button-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+  }
+
+  .button {
+    margin: 1rem;
+    font-size: 1.4rem;
+    padding: 1rem 2.4rem;
+    background-color: #cf56a1;
+    border-radius: 0.2rem;
+    color: #fff;
+    border: none;
+    outline: none;
+  }
+
+  .button:hover {
+    background-color: #ef498b;
+    border-radius: 2rem;
+    transition: .6s all;
+  }
+
+  .button:not(:hover) {
+    background-color: #cf56a1;
+    border-radius: .2rem;
+    transition: .2s all;
+  }
+
+  .button:active {
+    background-color: #ba2f7b;
+    transition: .4s all;
+  }
+
+  .name {
+    font-weight: 600;
+    color: #000;
+  }
+
+  ul {
+    margin: 2rem 0;
+  }
+
+  ul li {
+    font-size: 1.2rem;
+    font-weight: 100;
+  }
+</style>
+
+<body>
+  <h1>灵思注册许可申请</h1>
+  <div class="text-body">
+    <h2>尊敬的管理员：</h2>
+    <p>用户<span class="name">DoubleJan</span>在刚才向您申请了灵思的用户注册许可: </p>
+    <ul>
+      <li>用户名：<span>DoubleJan</span></li>
+      <li>邮箱名：<span>doublejan@126.com</span></li>
+    </ul>
+    <p>如果您认为这是允许的，请点击下方按钮，向他提供的邮箱中发送许可。</p>
+    <div class="button-wrap">
+      <button class="button" onclick="sendLience()">AUTH-LICENCE</button>
+    </div>
+    <div class="remark">
+      <p>Spirit Thought Server</p>
+      <p>2020.03.01 14:45</p>
+    </div>
+  </div>
+</body>
+<script>
+  function sendLience() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "http://localhost:8000/api/auth/licence/sendUserLience", true);
+    xmlhttp.send();
+  }
+</script>
+</html>

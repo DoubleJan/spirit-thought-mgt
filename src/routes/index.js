@@ -1,11 +1,10 @@
 // 匹配路由
 const note = require('./note');
 const health = require('./health');
+const auth = require('./auth');
 
-// 定义一个
-const routes = {
-  ...note, ...health
-}
+// 定义一个路由
+const routes = { ...note, ...health, ...auth }
 
 // 获得对应的路由
 function regexRouter(req) {
@@ -22,7 +21,6 @@ function regexRouter(req) {
 // 路由入口
 module.exports = (req, res) => {
   const router = regexRouter(req)
-
   if (typeof router === 'function') {
     router(req, res);
   } else {
