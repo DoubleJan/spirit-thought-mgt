@@ -27,12 +27,16 @@ module.exports = (req, res) => {
           return;
         } else {
           // 检查密码是否正确
-          if (Array.isArray(dbRes) && dbRes.length && isAuthPwd(data, dbRes[0].createTime, dbRes[0].password)) {
-            result = template.simpleGet({ 
-              data: { username: dbRes[0].username, email: dbRes[0].email, password: data.password } 
-            });
+          if (Array.isArray(dbRes) && dbRes.length) { 
+            if (isAuthPwd(data, dbRes[0].createTime, dbRes[0].password)) {
+              result = template.simpleGet({ 
+                data: { username: dbRes[0].username, email: dbRes[0].email, password: data.password } 
+              });
+            } else {
+              result = template.simpleGet({ code: '101.103', msg: '账号或密码错误' });
+            }
           } else {
-            result = template.simpleGet({ code: '101.103', msg: '账号或密码错误' });
+            result = template.simpleGet({ code: '101.102', msg: '用户不存在' });
           }
         }
         res.end(JSON.stringify(result));
