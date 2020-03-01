@@ -28,7 +28,9 @@ module.exports = (req, res) => {
         } else {
           // 检查密码是否正确
           if (Array.isArray(dbRes) && dbRes.length && isAuthPwd(data, dbRes[0].createTime, dbRes[0].password)) {
-            result = template.simpleGet({ data });
+            result = template.simpleGet({ 
+              data: { username: dbRes[0].username, email: dbRes[0].email, password: data.password } 
+            });
           } else {
             result = template.simpleGet({ code: '101.103', msg: '账号或密码错误' });
           }
