@@ -1,8 +1,8 @@
 // 处理获取许可的请求
 const moment = require('moment');
-const template = require('../../template');
+const template = require('../../utils/template');
 const crypto = require('./crypto');
-const queryParser = require('../../utils/queryParser');
+const { parseQuery } = require('../../utils/httpUtils');
 const Constants = require('../../constants');
 const { sendRegisterLicenceMail, sendUserLicenceMail, } = require('../../utils/mailer');
 
@@ -64,7 +64,7 @@ const LicenceHandler = {
 
 module.exports = {
   licence: function (req, res) {
-    const query = queryParser(req.url);
+    const query = parseQuery(req.url);
 
     if (query.params && query.params.type && LicenceHandler[query.params.type]) {
       console.log('type, licence: ', query.params.type, JSON.stringify(Constants))

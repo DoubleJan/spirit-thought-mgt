@@ -1,8 +1,8 @@
 // 注册
 
-const Mongodb = require('./../../mongodb');
-const template = require('./../../template');
-const Utils = require('./../../utils');
+const Mongodb = require('../../utils/mongodb');
+const template = require('../../utils/template');
+const Utils = require('./../../utils/httpUtils');
 const { getLicences } = require('./licence');
 const cryptoPwd = require('./crypto');
 const moment = require('moment');

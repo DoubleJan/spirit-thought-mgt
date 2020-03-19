@@ -1,7 +1,7 @@
 // /note/directory 查询笔记文件夹
 
-const Mongodb = require('./../../mongodb');
-const template = require('./../../template');
+const Mongodb = require('./../../utils/mongodb');
+const template = require('./../../utils/template');
 
 
 // 导出

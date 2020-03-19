@@ -9,7 +9,7 @@ const routes = { ...note, ...health, ...auth }
 // 获得对应的路由
 function regexRouter(req) {
   const router = Object.keys(routes).find((v) => req.url.includes(`/api${v}`));
-  if (routes[router] && routes[router].method === req.method.toUpperCase()) {
+  if (routes[router] && routes[router].method.search(req.method.toUpperCase()) != -1) {
     // 打印出基本请求信息
     console.log(`${req.headers.host} ${req.url} ${req.method}`);
     return routes[router].handler;

@@ -1,8 +1,8 @@
 // 填写健康日报
 
-const Mongodb = require('./../../mongodb');
-const template = require('./../../template');
-const Utils = require('./../../utils');
+const Mongodb = require('../../utils/mongodb');
+const template = require('../../utils/template');
+const Utils = require('./../../utils/httpUtils');
 
 module.exports = (req, res) => {
 

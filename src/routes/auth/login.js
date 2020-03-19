@@ -1,8 +1,8 @@
 // 登录
 
-const Mongodb = require('./../../mongodb');
-const template = require('./../../template');
-const Utils = require('./../../utils');
+const Mongodb = require('./../../utils/mongodb');
+const template = require('./../../utils/template');
+const Utils = require('./../../utils/httpUtils');
 const cryptoPwd = require('./crypto');
 
 // 校验密码加密是否正确
